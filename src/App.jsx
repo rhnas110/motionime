@@ -24,7 +24,8 @@ function App() {
         <Routes key={location.pathname} location={location}>
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<ComingSoonPage />} />
-          <Route path="/contact" element={<ComingSoonPage />} />
+          <Route path="/event" element={<ComingSoonPage />} />
+          <Route path="/catalog" element={<ComingSoonPage />} />
 
           <Route path="*" element={<NotFoundPage />} />
         </Routes>

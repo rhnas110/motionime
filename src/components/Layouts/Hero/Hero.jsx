@@ -1,10 +1,11 @@
 import { useContext } from "react";
 import { Cursor, useTypewriter } from "react-simple-typewriter";
 
+import { ButtonJoinNow } from "../../Elements/Button";
+
 import { CursorContext } from "../../../context/CursorContext";
 import { motion } from "../../../utils/motion";
 import { transition } from "../../../config/transition.config";
-import { ButtonJoinNow } from "../../Elements/Button";
 
 import heroVid from "../../../assets/img/hero/hero.mp4";
 import heroImg from "../../../assets/img/hero/hero.png";
@@ -32,6 +33,16 @@ export const Hero = () => {
     deleteSpeed: 140,
   });
   const { mouseEnterHandler, mouseLeaveHandler } = useContext(CursorContext);
+  const heroVideo = document.getElementById("heroVideo");
+
+  function playVid() {
+    heroVideo.play();
+  }
+
+  function pauseVid() {
+    heroVideo.pause();
+  }
+
   return (
     <motion.section
       className="section"
@@ -41,11 +52,22 @@ export const Hero = () => {
       transition={transition}
     >
       {/* hero background */}
-      <div className="w-screen h-screen overflow-hidden absolute -z-10">
-        <video autoPlay muted loop playsInline className="hidden lg:block">
+      <div className="w-screen h-screen overflow-hidden absolute -z-10 bg-primary">
+        <video
+          id="heroVideo"
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="w-full h-full object-cover object-center"
+        >
           <source src={heroVid} />
         </video>
-        <img src={heroImg} alt="deer" className="object-cover w-full h-full" />
+        {/* <img
+          src={heroImg}
+          alt="deer"
+          className="object-cover w-full h-full object-center"
+        /> */}
       </div>
       {/* end of hero background */}
       {/* content hero */}
@@ -84,7 +106,11 @@ export const Hero = () => {
               community with over 450k+ members. Let's join to become the bocil
               of death.
             </p>
-            <ButtonJoinNow where="hero" />
+            <ButtonJoinNow
+              where="hero"
+              onMouseEnter={pauseVid}
+              onMouseLeave={playVid}
+            />
           </motion.div>
         </div>
       </div>
