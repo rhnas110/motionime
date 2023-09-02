@@ -6,11 +6,15 @@ import { AnimatePresence } from "./utils/motion";
 
 import { Cursor } from "./components/Elements/Cursor";
 
-import { ComingSoonPage, HomePage, NotFoundPage } from "./pages";
+import { AboutPage, ComingSoonPage, HomePage, NotFoundPage } from "./pages";
 // perlu di rapihin
-import { About } from "./pages/About/About";
 import { Portfolio } from "./pages/Portfolio/Portfolio";
 import { Contact } from "./pages/Contact/Contact";
+
+// AOS
+import AOS from "aos";
+import "aos/dist/aos.css";
+AOS.init();
 
 function App() {
   const location = useLocation();
@@ -23,7 +27,7 @@ function App() {
       <AnimatePresence initial={true} mode="wait">
         <Routes key={location.pathname} location={location}>
           <Route path="/" element={<HomePage />} />
-          <Route path="/about" element={<ComingSoonPage />} />
+          <Route path="/about" element={<AboutPage />} />
           <Route path="/event" element={<ComingSoonPage />} />
           <Route path="/catalog" element={<ComingSoonPage />} />
 

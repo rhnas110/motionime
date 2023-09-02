@@ -8,7 +8,6 @@ import { motion } from "../../../utils/motion";
 import { transition } from "../../../config/transition.config";
 
 import heroVid from "../../../assets/img/hero/hero.mp4";
-import heroImg from "../../../assets/img/hero/hero.png";
 
 const motionWords = [
   "Game",
@@ -63,11 +62,6 @@ export const Hero = () => {
         >
           <source src={heroVid} />
         </video>
-        {/* <img
-          src={heroImg}
-          alt="deer"
-          className="object-cover w-full h-full object-center"
-        /> */}
       </div>
       {/* end of hero background */}
       {/* content hero */}

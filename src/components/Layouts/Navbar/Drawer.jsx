@@ -4,8 +4,8 @@ import { Link, useLocation } from "react-router-dom";
 import { IoMdClose } from "react-icons/io";
 import { CgMenuRight } from "react-icons/cg";
 
-import { navbarMenu } from "./Navbar";
 import { ButtonJoinNow } from "../../Elements/Button";
+import { navbarMenu } from "../../../data";
 import { motion } from "../../../utils/motion";
 
 const menuVariants = {
@@ -29,7 +29,10 @@ export const Drawer = () => {
   }
   return (
     <nav className="text-primary lg:hidden">
-      <div className="text-3xl cursor-pointer text-white" onClick={handleOpenMenu}>
+      <div
+        className="text-3xl cursor-pointer text-white"
+        onClick={handleOpenMenu}
+      >
         <CgMenuRight />
       </div>
 
@@ -37,7 +40,7 @@ export const Drawer = () => {
         variants={menuVariants}
         initial="hidden"
         animate={openMenu ? "show" : ""}
-        className="bg-white shadow-2xl w-full absolute -top-[22px] -right-2 max-w-xs h-screen z-20"
+        className="bg-white shadow-2xl w-full absolute -top-[20px] -right-2 max-w-xs h-screen z-20"
       >
         <div
           className="text-4xl absolute z-30 left-4 top-8 text-primary cursor-pointer"
@@ -61,7 +64,9 @@ export const Drawer = () => {
               </li>
             );
           })}
-          <ButtonJoinNow  />
+          <li>
+            <ButtonJoinNow />
+          </li>
         </ul>
       </motion.div>
     </nav>
