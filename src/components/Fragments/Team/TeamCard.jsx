@@ -1,5 +1,5 @@
-import { AiFillInstagram, AiFillYoutube } from "react-icons/ai";
 import { Link } from "react-router-dom";
+import { AiFillInstagram, AiFillYoutube } from "react-icons/ai";
 
 export const TeamCard = ({ data }) => {
   const social = data?.social;
