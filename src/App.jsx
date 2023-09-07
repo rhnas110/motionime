@@ -6,10 +6,14 @@ import { AnimatePresence } from "./utils/motion";
 
 import { Cursor } from "./components/Elements/Cursor";
 
-import { AboutPage, ComingSoonPage, HomePage, NotFoundPage } from "./pages";
-// perlu di rapihin
-import { Portfolio } from "./pages/Portfolio/Portfolio";
-import { Contact } from "./pages/Contact/Contact";
+import {
+  AboutPage,
+  ComingSoonPage,
+  EventDetailPage,
+  EventPage,
+  HomePage,
+  NotFoundPage,
+} from "./pages";
 
 // AOS
 import AOS from "aos";
@@ -20,7 +24,7 @@ function App() {
   const location = useLocation();
 
   useEffect(() => {
-    console.log(process.env.REACT_APP_MOTIONIME);
+    // console.log(process.env.REACT_APP_MOTIONIME);
   }, []);
   return (
     <>
@@ -28,7 +32,8 @@ function App() {
         <Routes key={location.pathname} location={location}>
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />
-          <Route path="/event" element={<ComingSoonPage />} />
+          <Route path="/event" element={<EventPage />} />
+          <Route path="/event/:id" element={<EventDetailPage />} />
           <Route path="/catalog" element={<ComingSoonPage />} />
 
           <Route path="*" element={<NotFoundPage />} />

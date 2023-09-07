@@ -16,7 +16,7 @@ const etc = " | etc.";
 export const aboutDetail = [
   {
     title: "The Bocil's of Death",
-    text: "400 K+",
+    text: "490 K+",
   },
   {
     title: "Forum's",
@@ -41,7 +41,8 @@ export const aboutCard = [
   {
     image: gaming,
     title: "Gaming Party",
-    text: "Minecraft Jayapura Indah Server | Valorant Party | Mobile Game" + etc,
+    text:
+      "Minecraft Jayapura Indah Server | Valorant Party | Mobile Game" + etc,
   },
   {
     image: watch,
@@ -51,8 +52,7 @@ export const aboutCard = [
   {
     image: concert,
     title: "Theater & Concert",
-    text:
-      "Motion on Friday (MOF) | Radio on Motion (RON) - (Coming soon)" + etc,
+    text: "Motion on Friday (MOF)" + etc,
   },
   {
     image: art,

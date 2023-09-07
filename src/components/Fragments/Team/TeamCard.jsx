@@ -6,7 +6,7 @@ export const TeamCard = ({ data }) => {
 
   return (
     <div className="w-48 rounded-lg group relative cursor-pointer items-center justify-center overflow-hidden transition-shadow hover:shadow-xl hover:shadow-black/30">
-      <div className="h-60 w-48">
+      <div className="h-60 w-48 bg-primary">
         <img
           className="h-full w-full object-cover object-center transition-transform duration-500 group-hover:rotate-3 group-hover:scale-125"
           src={data?.picture}

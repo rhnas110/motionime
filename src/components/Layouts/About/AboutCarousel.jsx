@@ -1,6 +1,6 @@
 // swiper
 import { Swiper, SwiperSlide } from "swiper/react";
-import { FreeMode } from "swiper/modules";
+import { Autoplay, FreeMode, Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/free-mode";
 
@@ -11,8 +11,13 @@ export const AboutCarousel = ({ data }) => {
     <Swiper
       freeMode={true}
       grabCursor={true}
-      modules={[FreeMode]}
-      className="mySwiper rounded"
+      navigation={true}
+      modules={[FreeMode, Navigation, Autoplay]}
+      autoplay={{
+        delay: 3500,
+        disableOnInteraction: false,
+      }}
+      className="rounded"
       breakpoints={{
         0: {
           slidesPerView: 1,
@@ -41,7 +46,7 @@ export const AboutCarousel = ({ data }) => {
           return (
             <SwiperSlide key={index} className="p-2">
               <div className="flex flex-col gap-y-2 shadow-xl w-[240px] h-[360px] p-2 rounded-lg mx-auto">
-                <div className="w-full h-60 overflow-hidden rounded">
+                <div className="w-full h-60 overflow-hidden rounded bg-primary">
                   <motion.img
                     src={item?.image}
                     alt={item?.title}

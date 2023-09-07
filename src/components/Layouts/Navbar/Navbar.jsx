@@ -5,7 +5,6 @@ import { Drawer } from "./Drawer";
 import { Socials } from "./Socials";
 
 import { CursorContext } from "../../../context/CursorContext";
-import { motion } from "../../../utils/motion";
 import { navbarMenu } from "../../../data";
 
 export const Navbar = () => {
@@ -40,13 +39,7 @@ export const Navbar = () => {
       className="fixed w-full z-30 h-24 flex items-center justify-center px-2 xl:px-1 text-white transition-all duration-700"
       id="navbar"
     >
-      <motion.div
-        // perlu konfigurasi biar smooth
-        initial={{ opacity: 0, y: "-10%" }}
-        animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: "-50%" }}
-        className="flex items-center justify-between w-full max-w-[1300px] backdrop-blur-xl lg:bg-transparent rounded-full lg:py-3 lg:px-5 px-3 py-2 border-b border-[rgba(234,234,234,34)] lg:border-none"
-      >
+      <div className="flex items-center justify-between w-full max-w-[1300px] backdrop-blur-xl lg:bg-transparent rounded-full lg:py-3 lg:px-5 px-3 py-2 border-b border-[rgba(234,234,234,34)] lg:border-none">
         <Link
           to={"/"}
           onMouseEnter={mouseEnterHandler}
@@ -65,8 +58,8 @@ export const Navbar = () => {
             return (
               <Link
                 key={index}
-                to={item.path}
                 className="font-bold transition underline-on-hover"
+                onClick={() => window.location.replace(`${item?.path}`)}
               >
                 {item.text}
               </Link>
@@ -80,7 +73,7 @@ export const Navbar = () => {
         <div className="hidden lg:flex ml-24">
           <Socials />
         </div>
-      </motion.div>
+      </div>
     </header>
   );
 };

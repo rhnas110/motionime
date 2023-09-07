@@ -24,6 +24,7 @@ export const MotionJoin = () => {
               src={mockup_motion}
               alt="mockup_motion"
               className="lg:w-full lg:h-[550px] md:w-[300px] md:h-[500px] w-[200px] h-[350px] object-cover object-center hover:-rotate-3 hover:scale-110 transition-transform duration-500"
+              loading="lazy"
             />
           </div>
           <div

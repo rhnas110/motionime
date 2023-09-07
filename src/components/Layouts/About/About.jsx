@@ -18,11 +18,11 @@ import { getWidth } from "../../../utils/screen";
 
 export const About = () => {
   const { mouseEnterHandler, mouseLeaveHandler } = useContext(CursorContext);
-
-  // 1024 === lg
   const width = getWidth();
+  
   return (
     <motion.div
+      // 1024 === lg
       initial={{ opacity: 0, y: `${width > 1024 ? "100%" : ""}` }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: "100%" }}

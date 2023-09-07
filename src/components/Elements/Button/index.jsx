@@ -36,3 +36,20 @@ export const ButtonJoinNow = ({ className, where, ...props }) => {
     </>
   );
 };
+
+export const ButtonWatchNow = () => {
+  return (
+    <>
+      <a
+        href="https://discord.com/invite/motionime"
+        target="_blank"
+        rel="noopener noreferrer"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <button className="border text-white border-gray-300 py-2 px-5">
+          Watch Now
+        </button>
+      </a>
+    </>
+  );
+};

@@ -13,13 +13,18 @@ const motionWords = [
   "Game",
   "Music",
   "Friend",
+  "Hobbies",
   "Sport",
   "Creator",
   "Cosplay",
   "Idol",
   "Anime",
   "Movie",
+  "Manga",
+  "Drakor",
   "Hoyoverse",
+  "Rhythm",
+  "Fashion",
   "TCG",
   "etc.",
 ];
@@ -97,7 +102,7 @@ export const Hero = () => {
 
             <p className="lg:text-2xl text-xl font-bold text-gray-400 lg:w-[65%] md:w-[80%] w-[95%] mx-auto mb-10 px-1">
               <span className="font-motion_ime">Motion ime</span> is a discord
-              community with over 450k+ members. Let's join to become the bocil
+              community with over 490k+ members. Let's join to become the bocil
               of death.
             </p>
             <ButtonJoinNow

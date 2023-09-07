@@ -1,6 +1,8 @@
-import { Navbar } from "../../components/Layouts";
-import { About as AboutLayouts } from "../../components/Layouts";
-import { Footer } from "../../components/Layouts";
+import {
+  Navbar,
+  Footer,
+  About as AboutLayouts,
+} from "../../components/Layouts";
 
 export const About = () => {
   return (
