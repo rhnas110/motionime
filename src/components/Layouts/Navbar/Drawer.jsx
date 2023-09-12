@@ -30,7 +30,9 @@ export const Drawer = () => {
   return (
     <nav className="text-primary lg:hidden">
       <div
-        className="text-3xl cursor-pointer text-white"
+        className={`text-3xl cursor-pointer ${
+          location?.pathname === "/catalog" ? "text-primary" : "text-white"
+        }`}
         onClick={handleOpenMenu}
       >
         <CgMenuRight />

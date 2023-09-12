@@ -36,7 +36,9 @@ export const Navbar = () => {
   });
   return (
     <header
-      className="fixed w-full z-30 h-24 flex items-center justify-center px-2 xl:px-1 text-white transition-all duration-700"
+      className={`fixed w-full z-30 h-24 flex items-center justify-center px-2 xl:px-1 transition-all duration-700 ${
+        location?.pathname === "/catalog" ? "text-primary" : "text-white"
+      }`}
       id="navbar"
     >
       <div className="flex items-center justify-between w-full max-w-[1300px] backdrop-blur-xl lg:bg-transparent rounded-full lg:py-3 lg:px-5 px-3 py-2 border-b border-[rgba(234,234,234,34)] lg:border-none">

@@ -8,6 +8,7 @@ import { Cursor } from "./components/Elements/Cursor";
 
 import {
   AboutPage,
+  CatalogPage,
   ComingSoonPage,
   EventDetailPage,
   EventPage,
@@ -34,7 +35,7 @@ function App() {
           <Route path="/about" element={<AboutPage />} />
           <Route path="/event" element={<EventPage />} />
           <Route path="/event/:id" element={<EventDetailPage />} />
-          <Route path="/catalog" element={<ComingSoonPage />} />
+          <Route path="/catalog" element={<CatalogPage />} />
 
           <Route path="*" element={<NotFoundPage />} />
         </Routes>

@@ -8,6 +8,7 @@ import { Event } from "./Event/Event";
 import { EventDetail } from "./Event/EventDetail";
 import { useContext } from "react";
 import { EventTitleContext } from "../context/EventTitleContext";
+import { Catalog } from "./Catalog/Catalog";
 
 // custom title
 function Page({ children }) {
@@ -31,6 +32,10 @@ function EventDetailPage() {
   useDocumentTitle(`motion ime activity | ${title ? title : "..."}`);
   return <Page children={<EventDetail />} />;
 }
+function CatalogPage() {
+  useDocumentTitle("motion catalog");
+  return <Page children={<Catalog />} />;
+}
 
 function ComingSoonPage() {
   useDocumentTitle("page is coming soon");
@@ -48,4 +53,5 @@ export {
   AboutPage,
   EventPage,
   EventDetailPage,
+  CatalogPage,
 };
