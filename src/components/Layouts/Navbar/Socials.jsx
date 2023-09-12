@@ -11,25 +11,24 @@ const socialsMenu = [
   { icon: <IoLogoTiktok />, path: "https://www.tiktok.com/@motionime" },
 ];
 
-export const Socials = () => {
+export const Socials = ({ className = "text-lg" }) => {
   const { mouseEnterHandler, mouseLeaveHandler } = useContext(CursorContext);
+  const c = className;
   return (
-    <div className="hidden lg:flex ml-24">
-      <ul className="flex gap-x-4 text-lg">
-        {socialsMenu.map((item, index) => {
-          return (
-            <li
-              key={index}
-              onMouseEnter={mouseEnterHandler}
-              onMouseLeave={mouseLeaveHandler}
-            >
-              <a href={item.path} target="_blank" rel="noopener noreferrer">
-                {item.icon}
-              </a>
-            </li>
-          );
-        })}
-      </ul>
-    </div>
+    <ul className={`flex gap-x-4 ${c}`}>
+      {socialsMenu.map((item, index) => {
+        return (
+          <li
+            key={index}
+            onMouseEnter={mouseEnterHandler}
+            onMouseLeave={mouseLeaveHandler}
+          >
+            <a href={item.path} target="_blank" rel="noopener noreferrer">
+              {item.icon}
+            </a>
+          </li>
+        );
+      })}
+    </ul>
   );
 };

@@ -8,19 +8,23 @@ import { motion } from "../../../utils/motion";
 import { transition } from "../../../config/transition.config";
 
 import heroVid from "../../../assets/img/hero/hero.mp4";
-import heroImg from "../../../assets/img/hero/hero.png";
 
 const motionWords = [
   "Game",
   "Music",
   "Friend",
+  "Hobbies",
   "Sport",
   "Creator",
   "Cosplay",
   "Idol",
   "Anime",
   "Movie",
+  "Manga",
+  "Drakor",
   "Hoyoverse",
+  "Rhythm",
+  "Fashion",
   "TCG",
   "etc.",
 ];
@@ -63,11 +67,6 @@ export const Hero = () => {
         >
           <source src={heroVid} />
         </video>
-        {/* <img
-          src={heroImg}
-          alt="deer"
-          className="object-cover w-full h-full object-center"
-        /> */}
       </div>
       {/* end of hero background */}
       {/* content hero */}
@@ -103,7 +102,7 @@ export const Hero = () => {
 
             <p className="lg:text-2xl text-xl font-bold text-gray-400 lg:w-[65%] md:w-[80%] w-[95%] mx-auto mb-10 px-1">
               <span className="font-motion_ime">Motion ime</span> is a discord
-              community with over 450k+ members. Let's join to become the bocil
+              community with over 490k+ members. Let's join to become the bocil
               of death.
             </p>
             <ButtonJoinNow

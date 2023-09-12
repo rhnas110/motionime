@@ -13,3 +13,10 @@
       @apply h-screen w-screen;
     }
   }
+
+html {
+    scroll-behavior: smooth;
+}
+::-webkit-scrollbar {
+    display: none;
+}

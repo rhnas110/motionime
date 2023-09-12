@@ -4,10 +4,7 @@ module.exports = {
   theme: {
     fontFamily: {
       motion_ime: ["ADLaM Display", "cursive"],
-      // masih cari font buat body biar cocok
-      primary: "Playfair Display",
       secondary: ["Poppins", "sans-serif"],
-      // secondary: "Mulish",
     },
     screens: {
       sm: "640px",
