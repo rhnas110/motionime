@@ -1,5 +1,5 @@
 import { navbarMenu } from "./navbar";
 import { founder } from "./founder";
-import { aboutDetail, aboutCard } from "./about";
+import { aboutCard } from "./about";
 
-export { navbarMenu, founder, aboutDetail, aboutCard };
+export { navbarMenu, founder, aboutCard };

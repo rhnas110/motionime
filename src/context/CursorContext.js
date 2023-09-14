@@ -21,7 +21,7 @@ export const CursorProvider = ({ children }) => {
     default: {
       x: cursorPos.x - 16,
       y: cursorPos.y - 16,
-      backgroundColor: "rgba(14, 18, 18,.66)",
+      backgroundColor: "rgba(18, 18, 18,.55)",
     },
     text: {
       width: "100px",

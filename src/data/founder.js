@@ -88,7 +88,7 @@ export const founder = [
     },
   },
   {
-    name: "losi",
+    name: "Losi",
     title: "Family",
     picture: losi_1,
     social: {},

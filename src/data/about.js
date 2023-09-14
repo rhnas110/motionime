@@ -13,25 +13,6 @@ import bocil from "../assets/img/about/card/bocil.jpeg";
 
 const etc = " | etc.";
 
-export const aboutDetail = [
-  {
-    title: "The Bocil's of Death",
-    text: "490 K+",
-  },
-  {
-    title: "Forum's",
-    text: "50+",
-  },
-  {
-    title: "Guardian's",
-    text: "40+",
-  },
-  {
-    title: "Event's",
-    text: "5+",
-  },
-];
-
 export const aboutCard = [
   {
     image: merchandise,

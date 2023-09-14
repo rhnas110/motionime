@@ -9,6 +9,9 @@ import { EventDetail } from "./Event/EventDetail";
 import { useContext } from "react";
 import { EventTitleContext } from "../context/EventTitleContext";
 import { Catalog } from "./Catalog/Catalog";
+import { Support } from "./Support/Support";
+
+import { Cursor } from "../components/Elements/Cursor";
 
 // custom title
 function Page({ children }) {
@@ -16,11 +19,29 @@ function Page({ children }) {
 }
 
 function HomePage() {
-  return <Page children={<Home />} />;
+  return (
+    <Page
+      children={
+        <>
+          <Home />
+          <Cursor />
+        </>
+      }
+    />
+  );
 }
 function AboutPage() {
   useDocumentTitle("about motion ime");
-  return <Page children={<About />} />;
+  return (
+    <Page
+      children={
+        <>
+          <About />
+          <Cursor />
+        </>
+      }
+    />
+  );
 }
 function EventPage() {
   useDocumentTitle("motion ime activity");
@@ -35,6 +56,10 @@ function EventDetailPage() {
 function CatalogPage() {
   useDocumentTitle("motion catalog");
   return <Page children={<Catalog />} />;
+}
+function SupportPage() {
+  useDocumentTitle("motion support");
+  return <Page children={<Support />} />;
 }
 
 function ComingSoonPage() {
@@ -54,4 +79,5 @@ export {
   EventPage,
   EventDetailPage,
   CatalogPage,
+  SupportPage,
 };

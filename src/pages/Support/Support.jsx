@@ -1,15 +1,15 @@
 import {
   Navbar,
-  Catalog as CatalogLayouts,
+  Support as SupportLayouts,
   Footer,
 } from "../../components/Layouts";
 
-export const Catalog = () => {
+export const Support = () => {
   return (
     <>
       <Navbar className="text-primary" />
-      <CatalogLayouts />
-      <Footer className="bg-inherit" />
+      <SupportLayouts />
+      {/* <Footer /> */}
     </>
   );
 };

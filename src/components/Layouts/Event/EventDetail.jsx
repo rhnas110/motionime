@@ -2,6 +2,7 @@ import "./EventDetail.css";
 import { useCallback, useContext, useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import axios from "axios";
+import { FaArrowLeftLong } from "react-icons/fa6";
 
 import { MI_API_BASE_URL } from "../../../config/motionime-api.config";
 import { EventTitleContext } from "../../../context/EventTitleContext";
@@ -35,7 +36,7 @@ export const EventDetail = () => {
     getEventById();
   }, [getEventById]);
   return (
-    <div>
+    <>
       <section className="section">
         {event?.length ? (
           <div className="w-full h-full relative">
@@ -47,7 +48,10 @@ export const EventDetail = () => {
               loading="lazy"
             />
             <div className="absolute w-full top-[20%] p-4 md:p-8 lg:py-16 lg:px-24">
-              <Link to={"/event"}>&#8592; Back to Event</Link>
+              <Link to={"/event"} className="flex items-center gap-2">
+                <FaArrowLeftLong size={20}/>
+                <span className="underline">Back to Event</span>
+              </Link>
               <h1 className="text-3xl md:text-5xl font-bold my-4">
                 {event[0]?.title}
               </h1>
@@ -58,12 +62,12 @@ export const EventDetail = () => {
                 <p>Genre :</p>
                 <p>{event[0]?.genre}</p>
               </div>
-              <div className="flex gap-x-4 text-[#865dff] font-semibold mb-2">
+              <div className="flex gap-x-4 text-[#865dff] font-semibold mb-4">
                 <p>Time :</p>
                 <p>{event[0]?.schedule}</p>
               </div>
               <div>
-                <ButtonWatchNow />
+                <ButtonWatchNow text="Play Now" />
               </div>
             </div>
           </div>
@@ -104,10 +108,16 @@ export const EventDetail = () => {
                       </div>
                     );
                   })}
+                  <div className="bg-[#865dff] p-2">
+                    {event[0]?.title} Episode List
+                  </div>
                 </>
               ) : (
                 <div className="text-center">
-                  <p>Check on discord</p>
+                  <p>
+                    Check on Discord{" "}
+                    <span className="font-motion_ime">Motion Ime!</span>
+                  </p>
                 </div>
               )}
             </>
@@ -124,6 +134,6 @@ export const EventDetail = () => {
           )}
         </div>
       </section>
-    </div>
+    </>
   );
 };

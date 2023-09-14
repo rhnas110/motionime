@@ -7,14 +7,17 @@ import "./index.css";
 import App from "./App";
 import { CursorProvider } from "./context/CursorContext";
 import { EventTitleProvider } from "./context/EventTitleContext";
+import { MemberProvider } from "./context/MemberContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter>
     <CursorProvider>
       <EventTitleProvider>
-        <App />
-        <ToastContainer draggable />
+        <MemberProvider>
+          <App />
+          <ToastContainer draggable />
+        </MemberProvider>
       </EventTitleProvider>
     </CursorProvider>
   </BrowserRouter>

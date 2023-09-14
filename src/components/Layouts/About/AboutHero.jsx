@@ -4,9 +4,11 @@ import { Link } from "react-router-dom";
 import { CursorContext } from "../../../context/CursorContext";
 
 import stackedBG from "../../../assets/img/about/stacked.svg";
+import { getWidth } from "../../../utils/screen";
 
 export const AboutHero = () => {
   const { mouseEnterHandler, mouseLeaveHandler } = useContext(CursorContext);
+  const width = getWidth();
 
   return (
     <section className="w-screen h-[120vh] relative">
@@ -24,6 +26,7 @@ export const AboutHero = () => {
         <div
           className="lg:w-[40%] sm:w-[60%] w-[90%] px-2 sm:mt-72 mt-36 h-max"
           data-aos="fade-up-right"
+          data-aos-delay={width > 1024 ? "1200" : "500"}
           onMouseEnter={mouseEnterHandler}
           onMouseLeave={mouseLeaveHandler}
         >

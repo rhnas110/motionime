@@ -7,9 +7,10 @@ import { Socials } from "./Socials";
 import { CursorContext } from "../../../context/CursorContext";
 import { navbarMenu } from "../../../data";
 
-export const Navbar = () => {
+export const Navbar = ({ className = "text-white" }) => {
   const { mouseEnterHandler, mouseLeaveHandler } = useContext(CursorContext);
   const location = useLocation();
+  const c = className;
 
   let lastScrollTop;
   window.addEventListener("scroll", function () {
@@ -36,12 +37,10 @@ export const Navbar = () => {
   });
   return (
     <header
-      className={`fixed w-full z-30 h-24 flex items-center justify-center px-2 xl:px-1 transition-all duration-700 ${
-        location?.pathname === "/catalog" ? "text-primary" : "text-white"
-      }`}
+      className={`fixed w-full z-30 h-24 flex items-center justify-center px-2 xl:px-1 transition-all duration-700 ${c}`}
       id="navbar"
     >
-      <div className="flex items-center justify-between w-full max-w-[1300px] backdrop-blur-xl lg:bg-transparent rounded-full lg:py-3 lg:px-5 px-3 py-2 border-b border-[rgba(234,234,234,34)] lg:border-none">
+      <div className="flex items-center justify-between w-full max-w-[1400px] backdrop-blur-xl lg:bg-transparent rounded-full lg:py-3 lg:px-5 px-3 py-2 border-b border-[rgba(234,234,234,34)] lg:border-none">
         <Link
           to={"/"}
           onMouseEnter={mouseEnterHandler}
@@ -72,7 +71,7 @@ export const Navbar = () => {
         {/* drawer for mobile navigation */}
         <Drawer />
         {/* end of drawer for mobile navigation */}
-        <div className="hidden lg:flex ml-24">
+        <div className="hidden lg:flex ml-12">
           <Socials />
         </div>
       </div>

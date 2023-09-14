@@ -14,7 +14,7 @@ export const AboutCarousel = ({ data }) => {
       navigation={true}
       modules={[FreeMode, Navigation, Autoplay]}
       autoplay={{
-        delay: 3500,
+        delay: 5000,
         disableOnInteraction: false,
       }}
       className="rounded"

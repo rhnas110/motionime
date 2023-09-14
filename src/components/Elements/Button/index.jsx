@@ -37,7 +37,7 @@ export const ButtonJoinNow = ({ className, where, ...props }) => {
   );
 };
 
-export const ButtonWatchNow = () => {
+export const ButtonWatchNow = ({ text = "Watch Now" }) => {
   return (
     <>
       <a
@@ -46,8 +46,8 @@ export const ButtonWatchNow = () => {
         rel="noopener noreferrer"
         onClick={(e) => e.stopPropagation()}
       >
-        <button className="border text-white border-gray-300 py-2 px-5">
-          Watch Now
+        <button className="flex items-center rounded-md bg-white px-6 py-[.6rem] text-primary font-semibold">
+          {text}
         </button>
       </a>
     </>

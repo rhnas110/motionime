@@ -55,7 +55,7 @@ export const Banner = () => {
               <SwiperSlide key={index}>
                 <div
                   className="w-full h-full cursor-pointer"
-                  onClick={() => window.location.replace(`/event/${item.id}`)}
+                  onClick={() => window.location.replace(`/event/${item?.id}`)}
                 >
                   <div className="absolute w-full h-full bg-gradient-to-r from-black"></div>
                   <img
@@ -64,7 +64,7 @@ export const Banner = () => {
                     alt={item?.title}
                     loading="lazy"
                   />
-                  <div className="absolute w-full top-[20%] p-4 md:p-8 lg:p-16">
+                  <div className="absolute w-full top-[20%] p-4 md:p-8 lg:py-16 lg:px-24">
                     <h1 className="text-3xl md:text-5xl font-bold">
                       {item?.title}
                     </h1>

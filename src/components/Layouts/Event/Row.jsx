@@ -39,7 +39,7 @@ export const Row = ({ title, fetchURL, rowID }) => {
           <div className="relative flex items-center group">
             <MdChevronLeft
               onClick={slideLeft}
-              className="bg-white text-primary lg:-left-[18px] left-0 rounded-full absolute opacity-50 hover:opacity-100 cursor-pointer z-10 hidden group-hover:block"
+              className="bg-white text-primary lg:-left-[20px] left-0 rounded-full absolute opacity-50 hover:opacity-100 cursor-pointer z-10 hidden group-hover:block"
               size={40}
             />
             <div
@@ -52,7 +52,7 @@ export const Row = ({ title, fetchURL, rowID }) => {
             </div>
             <MdChevronRight
               onClick={slideRight}
-              className="bg-white text-primary lg:-right-[18px] right-0 rounded-full absolute opacity-50 hover:opacity-100 cursor-pointer z-10 hidden group-hover:block"
+              className="bg-white text-primary lg:-right-[20px] right-0 rounded-full absolute opacity-50 hover:opacity-100 cursor-pointer z-10 hidden group-hover:block"
               size={40}
             />
           </div>

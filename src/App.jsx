@@ -1,10 +1,11 @@
 import "./assets/styles/global.css";
 import { Routes, Route, useLocation } from "react-router-dom";
-import { useEffect } from "react";
+import { useCallback, useContext, useEffect } from "react";
+import axios from "axios";
 
 import { AnimatePresence } from "./utils/motion";
-
-import { Cursor } from "./components/Elements/Cursor";
+import { MemberContext } from "./context/MemberContext";
+import { MI_API_BASE_URL } from "./config/motionime-api.config";
 
 import {
   AboutPage,
@@ -14,6 +15,7 @@ import {
   EventPage,
   HomePage,
   NotFoundPage,
+  SupportPage,
 } from "./pages";
 
 // AOS
@@ -23,6 +25,22 @@ AOS.init();
 
 function App() {
   const location = useLocation();
+  const { handleTotal } = useContext(MemberContext);
+
+  const getTotalMember = useCallback(async () => {
+    try {
+      if (location?.pathname === "/" || location?.pathname === "/about") {
+        const response = await (
+          await axios.get(`${MI_API_BASE_URL}/member.json`)
+        ).data;
+        handleTotal(response?.results?.byline);
+      } else return 0;
+    } catch (error) {}
+  }, [handleTotal, location]);
+
+  useEffect(() => {
+    getTotalMember();
+  }, [getTotalMember]);
 
   useEffect(() => {
     // console.log(process.env.REACT_APP_MOTIONIME);
@@ -36,13 +54,11 @@ function App() {
           <Route path="/event" element={<EventPage />} />
           <Route path="/event/:id" element={<EventDetailPage />} />
           <Route path="/catalog" element={<CatalogPage />} />
+          <Route path="/support" element={<SupportPage />} />
 
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </AnimatePresence>
-
-      {/* cursor */}
-      <Cursor />
     </>
   );
 }

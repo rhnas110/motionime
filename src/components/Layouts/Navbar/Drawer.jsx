@@ -28,10 +28,10 @@ export const Drawer = () => {
     setOpenMenu(!openMenu);
   }
   return (
-    <nav className="text-primary lg:hidden">
+    <nav className="text-inherit lg:hidden">
       <div
         className={`text-3xl cursor-pointer ${
-          location?.pathname === "/catalog" ? "text-primary" : "text-white"
+          location?.pathname === "/catalog" ? "text-primary" : "text-inherit"
         }`}
         onClick={handleOpenMenu}
       >
@@ -42,7 +42,7 @@ export const Drawer = () => {
         variants={menuVariants}
         initial="hidden"
         animate={openMenu ? "show" : ""}
-        className="bg-white shadow-2xl w-full absolute -top-[20px] -right-2 max-w-xs h-screen z-20"
+        className="bg-white shadow-2xl w-full absolute -top-[22px] -right-2 max-w-xs h-screen z-20"
       >
         <div
           className="text-4xl absolute z-30 left-4 top-8 text-primary cursor-pointer"

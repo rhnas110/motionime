@@ -5,8 +5,9 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 
 import { motion } from "../../../utils/motion";
+import { getWidth } from "../../../utils/screen";
 import { CursorContext } from "../../../context/CursorContext";
-import { aboutDetail, aboutCard } from "../../../data";
+import { aboutCard } from "../../../data";
 
 import { Team } from "../../Fragments/Team/Team";
 
@@ -14,12 +15,12 @@ import { AboutHero } from "./AboutHero";
 import { AboutCarousel } from "./AboutCarousel";
 import { MotionStory } from "./MotionStory";
 import { MotionJoin } from "./MotionJoin";
-import { getWidth } from "../../../utils/screen";
+import { AboutDetail } from "./AboutDetail";
 
 export const About = () => {
   const { mouseEnterHandler, mouseLeaveHandler } = useContext(CursorContext);
   const width = getWidth();
-  
+
   return (
     <motion.div
       // 1024 === lg
@@ -32,19 +33,7 @@ export const About = () => {
       <section className="mb-32">
         <div className="max-w-[1280px] mx-auto w-full h-full text-white">
           <div className="text-[#865dff] md:pt-16 pt-8 w-full flex flex-col gap-24">
-            <div
-              className="grid md:grid-cols-4 grid-cols-2 gap-4 text-center font-bold px-2 place-items-center"
-              data-aos="fade-up"
-            >
-              {aboutDetail.map((item, index) => {
-                return (
-                  <div key={index}>
-                    <p className="sm:text-5xl text-4xl">{item.text}</p>
-                    <span className="text-grey text-lg">{item.title}</span>
-                  </div>
-                );
-              })}
-            </div>
+            <AboutDetail />
 
             <div data-aos="fade-up" data-aos-delay="500">
               <div

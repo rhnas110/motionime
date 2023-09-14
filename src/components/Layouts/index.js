@@ -5,5 +5,6 @@ import { Footer } from "./Footer/Footer";
 import { Event } from "./Event/Event";
 import { EventDetail } from "./Event/EventDetail";
 import { Catalog } from "./Catalog/Catalog";
+import { Support } from "./Support/Support";
 
-export { Navbar, Hero, About, Footer, Event, EventDetail, Catalog };
+export { Navbar, Hero, About, Footer, Event, EventDetail, Catalog, Support };

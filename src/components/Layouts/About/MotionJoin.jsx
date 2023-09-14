@@ -35,7 +35,7 @@ export const MotionJoin = () => {
             onMouseLeave={mouseLeaveHandler}
           >
             <p className="text-[#865dff] font-bold">Halo, Motion Imers.</p>
-            <h1 className="md:text-4xl sm:text-3xl text-2xl font-bold py-2">
+            <h1 className="md:text-4xl sm:text-3xl text-xl font-bold py-2">
               Did you already join
               <span className="font-motion_ime"> motion ime</span>?
             </h1>

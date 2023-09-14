@@ -8,6 +8,7 @@ import { motion } from "../../../utils/motion";
 import { transition } from "../../../config/transition.config";
 
 import heroVid from "../../../assets/img/hero/hero.mp4";
+import { MemberContext } from "../../../context/MemberContext";
 
 const motionWords = [
   "Game",
@@ -37,6 +38,7 @@ export const Hero = () => {
     deleteSpeed: 140,
   });
   const { mouseEnterHandler, mouseLeaveHandler } = useContext(CursorContext);
+  const { total } = useContext(MemberContext);
   const heroVideo = document.getElementById("heroVideo");
 
   function playVid() {
@@ -102,8 +104,8 @@ export const Hero = () => {
 
             <p className="lg:text-2xl text-xl font-bold text-gray-400 lg:w-[65%] md:w-[80%] w-[95%] mx-auto mb-10 px-1">
               <span className="font-motion_ime">Motion ime</span> is a discord
-              community with over 490k+ members. Let's join to become the bocil
-              of death.
+              community with over {total || "..."} members. Let's join to become
+              the bocil of death.
             </p>
             <ButtonJoinNow
               where="hero"
