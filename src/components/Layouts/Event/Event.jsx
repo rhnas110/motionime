@@ -13,12 +13,12 @@ export const Event = () => {
 
       <section className="w-screen my-16">
         <div className="max-w-7xl mx-auto">
-          <Row title="Trending Now" rowID={1} fetchURL={"/event.json"} />
+          <Row title="Trending Now" rowID={1} fetchURL={"event.json"} />
         </div>
       </section>
       {/* <section className="w-screen my-16">
         <div className="max-w-7xl mx-auto">
-            <Row title="Coming Soon" rowID={2} fetchURL={"/event-dummy.json"}/>
+            <Row title="Coming Soon" rowID={2} fetchURL={"event-dummy.json"}/>
         </div>
       </section> */}
 

@@ -16,10 +16,12 @@ import { AboutCarousel } from "./AboutCarousel";
 import { MotionStory } from "./MotionStory";
 import { MotionJoin } from "./MotionJoin";
 import { AboutDetail } from "./AboutDetail";
+import { MemberContext } from "../../../context/MemberContext";
 
 export const About = () => {
   const { mouseEnterHandler, mouseLeaveHandler } = useContext(CursorContext);
   const width = getWidth();
+  const { total } = useContext(MemberContext);
 
   return (
     <motion.div
@@ -33,7 +35,7 @@ export const About = () => {
       <section className="mb-32">
         <div className="max-w-[1280px] mx-auto w-full h-full text-white">
           <div className="text-[#865dff] md:pt-16 pt-8 w-full flex flex-col gap-24">
-            <AboutDetail />
+            <AboutDetail total={total} />
 
             <div data-aos="fade-up" data-aos-delay="500">
               <div
@@ -57,8 +59,8 @@ export const About = () => {
                   , we introduce imaginative solutions through imaginative
                   technology. Not simply that, we also provide an online
                   community that is unrivaled through the Discord platform, with
-                  over 450k members making it the largest and most active
-                  community in Indonesia.
+                  over {total || "..."} members making it the largest and most
+                  active community in Indonesia.
                 </p>
               </div>
             </div>

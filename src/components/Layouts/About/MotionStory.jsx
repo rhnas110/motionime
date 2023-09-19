@@ -15,7 +15,7 @@ export const MotionStory = () => {
           </h1>
           <div className="flex flex-col sm:gap-y-6 gap-y-4">
             <p>
-              In the year 2023, Motion ime was born from the extraordinary
+              In the year 2023, Motion Ime was born from the extraordinary
               imagination of two talented young men: Windah Basudara and Rio
               Djaja. A project that started as a fun idea, with strong
               determination, Motion ime embarked on a challenging journey,
@@ -30,9 +30,9 @@ export const MotionStory = () => {
               world.
             </p>
             <p className={`${width < 919 ? "hidden" : ""}`}>
-              Di tahun 2023, Motion ime lahir dari imajinasi luar biasa dua
+              Di tahun 2023, Motion Ime lahir dari imajinasi luar biasa dua
               pemuda berbakat: Windah Basudara dan Rio Djaja. Sebuah proyek yang
-              berawal dari ide iseng, Dengan tekad yang kuat, Motion ime memulai
+              berawal dari ide iseng, dengan tekad yang kuat, Motion Ime memulai
               perjalanan yang menantang, mengarahkan fokus mereka pada produk
               merchandise berbasis teknologi pencitraan 3D yang unik.
               <br /> <br />

@@ -1,8 +1,4 @@
-import { useContext } from "react";
-import { MemberContext } from "../../../context/MemberContext";
-
-export const AboutDetail = () => {
-  const { total } = useContext(MemberContext);
+export const AboutDetail = ({ total }) => {
   const data = [
     {
       title: "The Bocil's of Death",

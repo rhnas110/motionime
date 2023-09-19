@@ -11,6 +11,8 @@ export const Navbar = ({ className = "text-white" }) => {
   const { mouseEnterHandler, mouseLeaveHandler } = useContext(CursorContext);
   const location = useLocation();
   const c = className;
+  const isUnderline =
+    location?.pathname === "/" || location?.pathname === "/about";
 
   let lastScrollTop;
   window.addEventListener("scroll", function () {
@@ -59,7 +61,9 @@ export const Navbar = ({ className = "text-white" }) => {
             return (
               <Link
                 key={index}
-                className="font-bold transition underline-on-hover"
+                className={`font-bold transition ${
+                  isUnderline ? "underline-on-hover" : "hover:underline"
+                } `}
                 onClick={() => window.location.replace(`${item?.path}`)}
               >
                 {item.text}

@@ -29,7 +29,11 @@ function App() {
 
   const getTotalMember = useCallback(async () => {
     try {
-      if (location?.pathname === "/" || location?.pathname === "/about") {
+      if (
+        location?.pathname === "/" ||
+        location?.pathname === "/about" ||
+        location?.pathname === "/support"
+      ) {
         const response = await (
           await axios.get(`${MI_API_BASE_URL}/member.json`)
         ).data;
