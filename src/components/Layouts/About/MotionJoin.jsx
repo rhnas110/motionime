@@ -9,7 +9,7 @@ export const MotionJoin = () => {
   const { mouseEnterHandler, mouseLeaveHandler } = useContext(CursorContext);
   return (
     <section
-      className="w-screen lg:h-[90vh] from-[#e6d7ff] to-[#caadff] bg-gradient-to-br overflow-auto"
+      className="w-screen lg:h-[90vh] from-[#e6d7ff] to-[#caadff] bg-gradient-to-b overflow-auto"
       data-aos="fade-up"
       data-aos-delay="1000"
     >

@@ -8,7 +8,7 @@ import { MI_API_BASE_URL } from "../../../config/motionime-api.config";
 import { EventTitleContext } from "../../../context/EventTitleContext";
 import { minimizeString } from "../../../utils/string";
 
-import { ButtonWatchNow } from "../../Elements/Button";
+import { ButtonEvent } from "../../Elements/Button";
 
 export const EventDetail = () => {
   const { id } = useParams();
@@ -49,8 +49,10 @@ export const EventDetail = () => {
             />
             <div className="absolute w-full top-[20%] p-4 md:p-8 lg:py-16 lg:px-24">
               <Link to={"/event"} className="flex items-center gap-2">
-                <FaArrowLeftLong size={20}/>
-                <span className="underline">Back to Event</span>
+                <FaArrowLeftLong size={20} />
+                <span className="underline underline-offset-4">
+                  Back to Event
+                </span>
               </Link>
               <h1 className="text-3xl md:text-5xl font-bold my-4">
                 {event[0]?.title}
@@ -62,13 +64,16 @@ export const EventDetail = () => {
                 <p>Genre :</p>
                 <p>{event[0]?.genre}</p>
               </div>
-              <div className="flex gap-x-4 text-[#865dff] font-semibold mb-4">
+              <div className="flex gap-x-4 text-[#865dff] font-semibold mb-6">
                 <p>Time :</p>
                 <p>{event[0]?.schedule}</p>
               </div>
-              <div>
-                <ButtonWatchNow text="Play Now" />
-              </div>
+              <ButtonEvent
+                text={`${
+                  event[0]?.type === "play" ? "Watch Now" : "Check Now"
+                }`}
+                link={event[0]?.link}
+              />
             </div>
           </div>
         ) : (
@@ -87,14 +92,14 @@ export const EventDetail = () => {
             <>
               {episodes?.length ? (
                 <>
-                  <div className="bg-[#865dff] p-2">
+                  <div className="bg-[#865dff] p-2 font-semibold">
                     {event[0]?.title} Episode List
                   </div>
                   {episodes?.map((item, index) => {
                     return (
                       <div
                         key={index}
-                        className={`p-2 cursor-pointer hover:underline ${
+                        className={`p-2 flex flex-col sm:flex-row sm:justify-between gap-2 ${
                           index % 2 === 0 ? "bg-primary" : "rgba(22,22,22,1)"
                         }`}
                       >
@@ -102,13 +107,15 @@ export const EventDetail = () => {
                           href={item?.link}
                           target="_blank"
                           rel="noopener noreferrer"
+                          className="hover:underline"
                         >
                           {event[0]?.title} {item?.title}
                         </a>
+                        <p className="opacity-80 text-right">{item?.time}</p>
                       </div>
                     );
                   })}
-                  <div className="bg-[#865dff] p-2">
+                  <div className="bg-[#865dff] p-2 font-semibold">
                     {event[0]?.title} Episode List
                   </div>
                 </>

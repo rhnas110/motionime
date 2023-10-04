@@ -14,7 +14,7 @@ import axios from "axios";
 import { MI_API_BASE_URL } from "../../../config/motionime-api.config";
 import { minimizeString } from "../../../utils/string";
 import { getWidth } from "../../../utils/screen";
-import { ButtonWatchNow } from "../../Elements/Button";
+import { ButtonEvent } from "../../Elements/Button";
 
 export const Banner = () => {
   const [banner, setBanner] = useState([]);
@@ -68,12 +68,15 @@ export const Banner = () => {
                     <h1 className="text-3xl md:text-5xl font-bold">
                       {item?.title}
                     </h1>
-                    <p className="w-full md:max-w-[70%] lg:max-w-[50%] xl:max-w-[35%] text-gray-200 my-4">
+                    <p className="w-full md:max-w-[70%] lg:max-w-[50%] xl:max-w-[35%] text-gray-200 mt-4 mb-8">
                       {minimizeString(item?.overview, 150)}
                     </p>
-                    <div>
-                      <ButtonWatchNow />
-                    </div>
+                    <ButtonEvent
+                      text={`${
+                        item?.type === "play" ? "Watch Now" : "Check Now"
+                      }`}
+                      link={item?.link}
+                    />
                   </div>
                 </div>
               </SwiperSlide>

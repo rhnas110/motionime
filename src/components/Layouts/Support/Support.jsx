@@ -12,8 +12,11 @@ export const Support = () => {
 
       <section className="w-screen h-auto">
         <div className="max-w-7xl mx-auto px-2">
-          <div className="aspect-[2/1] sm:aspect-[3/1] lg:aspect-[4/1] rounded-lg bg-support">
-            <div className="flex flex-col justify-center items-center w-full h-full">
+          <div className="aspect-[2/1] sm:aspect-[3/1] lg:aspect-[4/1] rounded-lg bg-support py-8">
+            <div
+              className="flex flex-col justify-center items-center w-full h-full"
+              data-aos="zoom-in"
+            >
               <h2 className="text-white font-semibold sm:text-4xl text-xl">
                 Still have questions?
               </h2>

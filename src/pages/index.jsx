@@ -10,6 +10,8 @@ import { useContext } from "react";
 import { EventTitleContext } from "../context/EventTitleContext";
 import { Catalog } from "./Catalog/Catalog";
 import { Support } from "./Support/Support";
+import { Role } from "./Role/Role";
+import { GG } from "./GG";
 
 import { Cursor } from "../components/Elements/Cursor";
 
@@ -61,6 +63,14 @@ function SupportPage() {
   useDocumentTitle("motion support");
   return <Page children={<Support />} />;
 }
+function RolePage() {
+  useDocumentTitle("motion role");
+  return <Page children={<Role />} />;
+}
+function GGPage() {
+  useDocumentTitle("motion ime is the best community ever");
+  return <Page children={<GG />} />;
+}
 
 function ComingSoonPage() {
   useDocumentTitle("page is coming soon");
@@ -80,4 +90,6 @@ export {
   EventDetailPage,
   CatalogPage,
   SupportPage,
+  RolePage,
+  GGPage,
 };

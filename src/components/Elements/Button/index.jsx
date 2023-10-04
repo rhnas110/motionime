@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export const ButtonJoinNow = ({ className, where, ...props }) => {
   return (
     <>
@@ -37,19 +39,22 @@ export const ButtonJoinNow = ({ className, where, ...props }) => {
   );
 };
 
-export const ButtonWatchNow = ({ text = "Watch Now" }) => {
+export const ButtonEvent = ({
+  text = "Watch Now",
+  className,
+  link = "https://discord.com/invite/motionime",
+}) => {
+  const c = className;
   return (
-    <>
-      <a
-        href="https://discord.com/invite/motionime"
-        target="_blank"
-        rel="noopener noreferrer"
-        onClick={(e) => e.stopPropagation()}
-      >
-        <button className="flex items-center rounded-md bg-white px-6 py-[.6rem] text-primary font-semibold">
-          {text}
-        </button>
-      </a>
-    </>
+    <Link
+      className={`rounded-md bg-white px-6 py-[.6rem] text-primary font-semibold hover:bg-neutral-200 ${c}`}
+      onClick={(e) => {
+        e.stopPropagation();
+      }}
+      to={link}
+      target="_blank"
+    >
+      {text}
+    </Link>
   );
 };

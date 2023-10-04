@@ -58,7 +58,7 @@ export const Hero = () => {
       transition={transition}
     >
       {/* hero background */}
-      <div className="w-screen h-screen overflow-hidden absolute -z-10 bg-primary">
+      <div className="w-screen h-screen overflow-hidden absolute -z-10 bg-neutral-950">
         <video
           id="heroVideo"
           autoPlay
@@ -91,7 +91,7 @@ export const Hero = () => {
               Let's play and grow with{" "}
               <span className="font-motion_ime">motion ime!</span>
             </h1>
-            <p className="md:text-4xl sm:text-3xl text-2xl px:1 font-bold py-4">
+            <p className="md:text-4xl sm:text-3xl text-2xl font-bold py-4">
               Find your{" "}
               <span>
                 {text}
@@ -102,7 +102,7 @@ export const Hero = () => {
               interest!
             </p>
 
-            <p className="lg:text-2xl text-xl font-bold text-gray-400 lg:w-[65%] md:w-[80%] w-[95%] mx-auto mb-10 px-1">
+            <p className="lg:text-2xl text-lg font-bold text-gray-400 lg:w-[65%] md:w-[80%] w-[95%] mx-auto mb-10 px-1">
               <span className="font-motion_ime">Motion ime</span> is a discord
               community with over {total || "..."} members. Let's join to become
               the bocil of death.

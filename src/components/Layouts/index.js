@@ -6,5 +6,16 @@ import { Event } from "./Event/Event";
 import { EventDetail } from "./Event/EventDetail";
 import { Catalog } from "./Catalog/Catalog";
 import { Support } from "./Support/Support";
+import { Role } from "./Role/Role";
 
-export { Navbar, Hero, About, Footer, Event, EventDetail, Catalog, Support };
+export {
+  Navbar,
+  Hero,
+  About,
+  Footer,
+  Event,
+  EventDetail,
+  Catalog,
+  Support,
+  Role,
+};

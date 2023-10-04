@@ -84,13 +84,15 @@ export const founder = [
     picture: aeterna_1,
     social: {
       youtube: "https://www.youtube.com/@aeternagaming",
-      ig: "https://www.instagram.com/aeternaaaa/",
+      ig: "https://www.instagram.com/aeternaaaa",
     },
   },
   {
     name: "Losi",
     title: "Family",
     picture: losi_1,
-    social: {},
+    social: {
+      ig: "https://www.instagram.com/losi.meong",
+    },
   },
 ];

@@ -3,10 +3,9 @@ import { useState } from "react";
 import { MdChevronLeft, MdChevronRight } from "react-icons/md";
 
 import { TabNavMobile } from "./Tabs/TabNavMobile";
-import { TabGeneral } from "./Tabs/TabGeneral";
-import { TabGame } from "./Tabs/TabGame";
-import { TabOther } from "./Tabs/TabOther";
-import { TabDummy } from "./Tabs/TabDummy";
+import { TabData } from "./Tabs/TabData";
+
+import { generalTabFAQ, gameFAQ, otherFAQ, dummyFAQ } from "../../../data";
 
 const tabNavItem = [
   {
@@ -27,6 +26,25 @@ const tabNavItem = [
   },
 ];
 
+const tabData = [
+  {
+    title: "General",
+    data: generalTabFAQ,
+  },
+  {
+    title: "Game",
+    data: gameFAQ,
+  },
+  {
+    title: "Other",
+    data: otherFAQ,
+  },
+  {
+    title: "Dummy",
+    data: dummyFAQ,
+  },
+];
+
 export const OtherFAQ = () => {
   const [activeTab, setActiveTab] = useState(0);
 
@@ -36,11 +54,11 @@ export const OtherFAQ = () => {
 
   const slideLeft = () => {
     var slider = document.getElementById("slider");
-    slider.scrollLeft = slider.scrollLeft - 500;
+    slider.scrollLeft = slider.scrollLeft - 250;
   };
   const slideRight = () => {
     var slider = document.getElementById("slider");
-    slider.scrollLeft = slider.scrollLeft + 500;
+    slider.scrollLeft = slider.scrollLeft + 250;
   };
   return (
     <section className="w-screen h-auto my-16">
@@ -93,18 +111,13 @@ export const OtherFAQ = () => {
             </TabList>
 
             <div className="lg:relative lg:-top-14 h-fit">
-              <TabPanel>
-                <TabGeneral />
-              </TabPanel>
-              <TabPanel>
-                <TabGame />
-              </TabPanel>
-              <TabPanel>
-                <TabOther />
-              </TabPanel>
-              <TabPanel>
-                <TabDummy />
-              </TabPanel>
+              {tabData?.map((item, index) => {
+                return (
+                  <TabPanel key={index}>
+                    <TabData data={item?.data} />
+                  </TabPanel>
+                );
+              })}
             </div>
           </Tabs>
         </div>

@@ -62,7 +62,7 @@ export const Navbar = ({ className = "text-white" }) => {
               <Link
                 key={index}
                 className={`font-bold transition ${
-                  isUnderline ? "underline-on-hover" : "hover:underline"
+                  isUnderline ? "underline-on-hover" : "hover:underline underline-offset-[6px]"
                 } `}
                 onClick={() => window.location.replace(`${item?.path}`)}
               >

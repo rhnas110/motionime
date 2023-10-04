@@ -1,23 +1,13 @@
 import BGSupport from "../../../assets/img/support/bg-support.png";
-import BGSupport_sm from "../../../assets/img/support/bg-support-sm.png";
 
 export const Hero = () => {
   return (
     <section className="section pt-[4rem]">
       <div className="absolute bottom-0 w-full h-full -z-10">
-        <img
-          src={BGSupport}
-          alt="bg support"
-          className="w-full h-full hidden sm:inline"
-        />
-        <img
-          src={BGSupport_sm}
-          alt="bg support"
-          className="w-full h-full sm:hidden"
-        />
+        <img src={BGSupport} alt="bg support" className="w-full h-full" />
       </div>
       <div className="max-w-7xl h-full mx-auto flex items-center justify-center">
-        <div className="px-2">
+        <div className="px-2" data-aos="fade-up">
           <div className="text-center">
             <p className="md:text-xl text-[#865dff] font-semibold">
               Welcome Motion Imers,

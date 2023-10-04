@@ -13,8 +13,10 @@ import {
   ComingSoonPage,
   EventDetailPage,
   EventPage,
+  GGPage,
   HomePage,
   NotFoundPage,
+  RolePage,
   SupportPage,
 } from "./pages";
 
@@ -32,7 +34,8 @@ function App() {
       if (
         location?.pathname === "/" ||
         location?.pathname === "/about" ||
-        location?.pathname === "/support"
+        location?.pathname === "/support" ||
+        location?.pathname === "/gg"
       ) {
         const response = await (
           await axios.get(`${MI_API_BASE_URL}/member.json`)
@@ -59,6 +62,8 @@ function App() {
           <Route path="/event/:id" element={<EventDetailPage />} />
           <Route path="/catalog" element={<CatalogPage />} />
           <Route path="/support" element={<SupportPage />} />
+          <Route path="/role" element={<RolePage />} />
+          <Route path="/gg" element={<GGPage />} />
 
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
